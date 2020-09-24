@@ -18,7 +18,6 @@ public class RecipesList extends BaseActivity {
 
         initializing_views();
 
-
         testButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
