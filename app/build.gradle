@@ -24,12 +24,19 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 
 }
 
 dependencies {
 
+
     def retrofitVersion = "2.9.0";
+    def lifecycle_version = "2.2.0"
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
@@ -38,4 +45,23 @@ dependencies {
 
     //GSON Converter , it converts JSON data into java objects
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+
+    // ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    // LiveData
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+
+    // Annotation processor
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
+    //cardview
+    implementation 'androidx.cardview:cardview:1.0.0'
+    //recyclerview
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+
 }
