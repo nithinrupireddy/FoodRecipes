@@ -1,14 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RecipesList">
+   
+   <com.google.android.material.appbar.AppBarLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+      <com.google.android.material.appbar.MaterialToolbar
+          android:id="@+id/scrollbar"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:layout_scrollFlags="scroll|enterAlways">
+
+         <androidx.appcompat.widget.SearchView
+             android:id="@+id/searchview"
+             android:layout_width="match_parent"
+             android:layout_height="?attr/actionBarSize"
+             app:queryHint="Chicken breast..">
+
+         </androidx.appcompat.widget.SearchView>
+
+
+      </com.google.android.material.appbar.MaterialToolbar>
+
+   </com.google.android.material.appbar.AppBarLayout>
 
    <androidx.recyclerview.widget.RecyclerView
        android:layout_width="match_parent"
        android:layout_height="match_parent"
-       android:id="@+id/recipe_list"/>
+       android:id="@+id/recipe_list"
+       app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+<!--
+Here i am using co-orinationar layout for toolbar and recylcerview
+
+For toolbar to collapse while scrolling add this atribute
+
+          app:layout_scrollFlags="scroll|enterAlways"
+
+For recyclerview to adjust itself below toolbar add following attribute
+
+
+       app:layout_behavior="@string/appbar_scrolling_view_behavior"
+
+-->
