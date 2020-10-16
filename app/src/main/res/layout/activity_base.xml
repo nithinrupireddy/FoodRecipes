@@ -14,7 +14,22 @@
 
     </FrameLayout>
 
-    <ProgressBar
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="105dp"
+        android:id="@+id/progressBar"
+        app:lottie_loop="true"
+        android:scaleType="fitCenter"
+        app:lottie_fileName="rocketspinner.json"
+        app:lottie_autoPlay="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
+
+   <!-- <ProgressBar
         android:id="@+id/progressBar"
         style="@style/Widget.AppCompat.ProgressBar"
         android:layout_width="wrap_content"
@@ -23,6 +38,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:visibility="gone"/>
+        android:visibility="gone"/>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

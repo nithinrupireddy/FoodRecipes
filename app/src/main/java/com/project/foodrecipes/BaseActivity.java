@@ -8,10 +8,13 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 
+import com.airbnb.lottie.LottieAnimationView;
+
 public abstract class BaseActivity extends AppCompatActivity {
 
 
-    public ProgressBar mprogressBar;
+    //public ProgressBar mprogressBar;
+    private LottieAnimationView mprogressBar;
     @Override
     public void setContentView(int layoutResID) {
 
